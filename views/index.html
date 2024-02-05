@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att herois</title>
+</head>
+<body>
+
+    <h1>Herói</h1>
+    <p>Sua página sobre heróis</p>
+
+    {% if universo == "Marvel" and heroi == "iron man" %}
+        Universo escolhido: {{ universo }} <br>
+        Herói escolhido: {{ heroi }} <br>
+        <img src="{{ url_for('static', filename='iron_man.jpg') }}" width="200">
+    
+    {% elif universo == "dc" and heroi == "superman" %}
+        Universo escolhido: {{ universo }} <br>
+        Herói escolhido: {{ heroi }} <br>
+        <img src="{{ url_for('static', filename='superman.jpg') }}" width="200">
+
+    {% else %}
+        Não foi possível encontrar o universo e o herói!
+    {% endif %}
+</body>
+</html>
